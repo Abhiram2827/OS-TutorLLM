@@ -69,3 +69,4 @@ This project was developed as an educational assistant to make Operating Systems
 ## Author
 
 **Srinivas Abhiram**
+**Dheshik Reddy**
