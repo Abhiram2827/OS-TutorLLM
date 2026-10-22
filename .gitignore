@@ -1,0 +1,9 @@
+.DS_Store
+os_tutor
+*.o
+*.out
+.vscode/
+.env
+.env.*
+!.env.example
+*.log
