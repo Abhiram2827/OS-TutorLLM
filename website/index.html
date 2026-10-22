@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>OS TutorLLM</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <div class="logo-icon">OS</div>
+
+                <div>
+                    <h2>OS TutorLLM</h2>
+                    <p>AI Learning Assistant</p>
+                </div>
+            </div>
+
+            <nav>
+
+                <a href="#" class="active">
+                    <span>💬</span>
+                    Ask Tutor
+                </a>
+
+                <a href="#">
+                    <span>📚</span>
+                    OS Topics
+                </a>
+
+                <a href="#">
+                    <span>🧠</span>
+                    Quiz Mode
+                </a>
+
+                <a href="#">
+                    <span>⚙️</span>
+                    Settings
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="rag-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>RAG System</strong>
+                        <small>Knowledge Base Connected</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <!-- HEADER -->
+            <header class="header">
+
+                <div>
+                    <h1>Operating Systems Tutor</h1>
+
+                    <p>
+                        Ask questions and learn OS concepts using
+                        AI-powered retrieval.
+                    </p>
+                </div>
+
+                <button class="theme-button" id="themeButton">
+                    🌙
+                </button>
+
+            </header>
+
+
+            <!-- DASHBOARD CARDS -->
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon blue">
+                        📚
+                    </div>
+
+                    <div>
+                        <h3>7</h3>
+                        <p>Knowledge Documents</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon purple">
+                        🧩
+                    </div>
+
+                    <div>
+                        <h3>64</h3>
+                        <p>Text Chunks</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon green">
+                        🔍
+                    </div>
+
+                    <div>
+                        <h3>RAG</h3>
+                        <p>Retrieval Enabled</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CHAT AREA -->
+            <section class="chat-section">
+
+                <div class="chat-header">
+
+                    <div>
+                        <h2>Ask OS Tutor</h2>
+
+                        <p>
+                            Get answers from the OS knowledge base
+                        </p>
+                    </div>
+
+                    <span class="online">
+                        ● Online
+                    </span>
+
+                </div>
+
+
+                <!-- WELCOME MESSAGE -->
+                <div class="chat-content" id="chatContent">
+
+                    <div class="message tutor">
+
+                        <div class="avatar">
+                            🤖
+                        </div>
+
+                        <div class="message-body">
+
+                            <div class="message-name">
+                                OS TutorLLM
+                            </div>
+
+                            <div class="message-card">
+
+                                <p>
+                                    Hello! I'm your Operating Systems
+                                    learning assistant.
+                                </p>
+
+                                <p>
+                                    Ask me about CPU scheduling,
+                                    deadlocks, memory management,
+                                    processes, threads, or
+                                    synchronization.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUGGESTED QUESTIONS -->
+                <div class="suggestions">
+
+                    <p>Try asking:</p>
+
+                    <div class="suggestion-buttons">
+
+                        <button onclick="askQuestion('What is SRTF?')">
+                            What is SRTF?
+                        </button>
+
+                        <button onclick="askQuestion('What is deadlock?')">
+                            What is deadlock?
+                        </button>
+
+                        <button onclick="askQuestion('What is paging?')">
+                            What is paging?
+                        </button>
+
+                        <button onclick="askQuestion('What is a semaphore?')">
+                            What is a semaphore?
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INPUT -->
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="questionInput"
+                        placeholder="Ask an Operating Systems question..."
+                    >
+
+                    <button id="askButton">
+                        Ask Tutor →
+                    </button>
+
+                </div>
+
+
+                <div class="input-hint">
+                    Powered by C++ RAG retrieval • OS Knowledge Base
+                </div>
+
+            </section>
+
+
+            <!-- ANSWER / SOURCE PANEL -->
+            <section class="info-section">
+
+                <div class="info-card">
+
+                    <div class="info-title">
+                        <span>🔎</span>
+                        Retrieval Pipeline
+                    </div>
+
+                    <div class="pipeline">
+
+                        <span>Question</span>
+
+                        <b>→</b>
+
+                        <span>Retriever</span>
+
+                        <b>→</b>
+
+                        <span>Relevant Chunks</span>
+
+                        <b>→</b>
+
+                        <span>LLM</span>
+
+                        <b>→</b>
+
+                        <span>Answer</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-card source-card">
+
+                    <div class="info-title">
+                        <span>📄</span>
+                        Knowledge Source
+                    </div>
+
+                    <p id="sourceText">
+                        Ask a question to retrieve relevant
+                        OS knowledge.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
