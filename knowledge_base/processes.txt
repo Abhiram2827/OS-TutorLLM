@@ -1,0 +1,124 @@
+OPERATING SYSTEM PROCESSES
+
+A process is a program in execution. A process includes the program code, current activity, CPU registers, stack, data section and other resources.
+
+PROCESS STATES
+
+A process normally moves through different states:
+
+1. New
+2. Ready
+3. Running
+4. Waiting or Blocked
+5. Terminated
+
+NEW:
+The process is being created.
+
+READY:
+The process is waiting to be assigned to the CPU.
+
+RUNNING:
+The instructions of the process are currently being executed by the CPU.
+
+WAITING:
+The process is waiting for an event such as I/O completion.
+
+TERMINATED:
+The process has finished execution.
+
+PROCESS CONTROL BLOCK
+
+The Process Control Block, or PCB, is a data structure maintained by the operating system for every process.
+
+A PCB generally contains:
+
+1. Process ID
+2. Process state
+3. Program counter
+4. CPU registers
+5. CPU scheduling information
+6. Memory management information
+7. Accounting information
+8. I/O status information
+
+PROCESS ID
+
+A Process ID, or PID, uniquely identifies a process.
+
+PROGRAM COUNTER
+
+The program counter stores the address of the next instruction that should be executed.
+
+PROCESS SCHEDULING
+
+The operating system maintains queues for processes.
+
+Common queues include:
+
+1. Job queue
+2. Ready queue
+3. Device queues
+
+The ready queue contains processes that are ready to execute.
+
+CONTEXT SWITCH
+
+A context switch occurs when the CPU switches from one process to another.
+
+The operating system saves the state of the old process in its PCB and loads the saved state of the new process.
+
+PROCESS CREATION
+
+A process can create another process. The creating process is called the parent process and the new process is called the child process.
+
+In Unix-like operating systems, the fork() system call can be used to create a new process.
+
+PROCESS TERMINATION
+
+A process terminates when it finishes its execution or when it is terminated by another process or the operating system.
+
+PROCESS VS PROGRAM
+
+A program is a passive set of instructions stored on a disk.
+
+A process is an active program that is currently executing.
+
+THREADS
+
+A thread is a basic unit of CPU utilization within a process.
+
+Multiple threads can exist inside the same process and can share resources such as code, data and files.
+
+MULTIPROGRAMMING
+
+Multiprogramming keeps multiple programs in memory so that the CPU can switch to another program when one program waits for I/O.
+
+MULTITASKING
+
+Multitasking allows multiple tasks to appear to execute concurrently by rapidly switching the CPU between them.
+
+INTERPROCESS COMMUNICATION
+
+Interprocess Communication, or IPC, allows processes to exchange data and coordinate their activities.
+
+Common IPC mechanisms include:
+
+1. Shared memory
+2. Message passing
+3. Pipes
+4. Sockets
+
+SHARED MEMORY
+
+Shared memory allows multiple processes to access a common memory region.
+
+MESSAGE PASSING
+
+Message passing allows processes to communicate by sending and receiving messages.
+
+PROCESS SYNCHRONIZATION
+
+Synchronization is required when multiple processes or threads access shared resources.
+
+Synchronization prevents problems such as race conditions and inconsistent data.

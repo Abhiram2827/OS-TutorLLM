@@ -1,0 +1,226 @@
+OPERATING SYSTEMS - FILE SYSTEM
+
+A file system is an important component of an operating system that provides mechanisms for storing, organizing, managing, and accessing files on secondary storage devices.
+
+FILE
+
+A file is a named collection of related information stored on secondary storage.
+
+Examples of files include:
+- Text files
+- Program files
+- Image files
+- Audio files
+- Video files
+- Database files
+
+FILE ATTRIBUTES
+
+Common file attributes include:
+
+1. Name
+The human-readable name of the file.
+
+2. Identifier
+A unique identifier associated with the file.
+
+3. Type
+Indicates the type or format of the file.
+
+4. Location
+Specifies where the file is stored on the storage device.
+
+5. Size
+Specifies the amount of storage occupied by the file.
+
+6. Protection
+Specifies access permissions for the file.
+
+7. Time and Date
+Stores information such as creation time, modification time, and access time.
+
+FILE OPERATIONS
+
+Common file operations provided by an operating system include:
+
+1. Create
+Creates a new file.
+
+2. Open
+Opens a file so that it can be accessed.
+
+3. Read
+Reads data from a file.
+
+4. Write
+Writes data to a file.
+
+5. Seek
+Changes the current position within a file.
+
+6. Close
+Closes an opened file.
+
+7. Delete
+Removes a file from the file system.
+
+8. Rename
+Changes the name of a file.
+
+FILE TYPES
+
+Operating systems support different types of files.
+
+Examples include:
+- Regular files
+- Directory files
+- Character special files
+- Block special files
+
+FILE ACCESS METHODS
+
+Common file access methods are:
+
+1. Sequential Access
+Data is accessed in a sequential order from the beginning to the end.
+
+2. Direct Access
+Data can be accessed directly at a particular position without reading all previous data.
+
+3. Indexed Access
+An index is used to locate the required data.
+
+DIRECTORIES
+
+A directory is a structure used to organize and manage files.
+
+Directories store information about files and can contain other directories.
+
+DIRECTORY STRUCTURES
+
+Common directory structures include:
+
+1. Single-Level Directory
+All files are stored in a single directory.
+
+2. Two-Level Directory
+Each user has a separate directory.
+
+3. Tree-Structured Directory
+Directories can contain files and subdirectories, forming a hierarchical structure.
+
+4. Acyclic-Graph Directory
+Directories and files can be shared while avoiding cycles in the directory structure.
+
+FILE ALLOCATION
+
+File allocation determines how the blocks belonging to a file are stored on secondary storage.
+
+The three major file allocation methods are:
+
+1. Contiguous Allocation
+2. Linked Allocation
+3. Indexed Allocation
+
+CONTIGUOUS ALLOCATION
+
+In contiguous allocation, all blocks of a file are stored in consecutive disk blocks.
+
+Advantages:
+- Simple implementation
+- Fast sequential access
+- Fast direct access
+
+Disadvantages:
+- External fragmentation can occur.
+- Finding a sufficiently large continuous space can be difficult.
+
+LINKED ALLOCATION
+
+In linked allocation, the blocks of a file can be located anywhere on the disk. Each block contains a pointer to the next block.
+
+Advantages:
+- No external fragmentation
+- Files can grow easily
+
+Disadvantages:
+- Direct access is inefficient.
+- Pointer storage requires additional space.
+
+INDEXED ALLOCATION
+
+In indexed allocation, an index block contains pointers to the data blocks of a file.
+
+Advantages:
+- Supports direct access
+- No external fragmentation
+- File blocks can be located anywhere on the disk
+
+Disadvantage:
+- Additional storage is required for index blocks.
+
+FREE SPACE MANAGEMENT
+
+The operating system must keep track of free disk blocks.
+
+Common free-space management techniques include:
+
+1. Bit Vector
+Each disk block is represented by a bit indicating whether it is free or allocated.
+
+2. Linked List
+Free blocks are linked together.
+
+3. Grouping
+Addresses of multiple free blocks are stored together.
+
+4. Counting
+The starting address and number of consecutive free blocks are stored.
+
+FILE PROTECTION
+
+File protection controls which users and processes can access files.
+
+Common permissions include:
+- Read
+- Write
+- Execute
+
+Access control helps prevent unauthorized modification or access.
+
+FILE SYSTEM MOUNTING
+
+Before a file system can be accessed, it may need to be mounted.
+
+Mounting makes the file system available at a specified location in the directory hierarchy.
+
+FILE SYSTEM IMPLEMENTATION
+
+A file system uses data structures to manage files and storage blocks.
+
+Important structures may include:
+- File control blocks
+- Directory structures
+- Free-space lists
+- Allocation tables
+- Inodes
+
+INODE
+
+An inode is a data structure used by file systems such as Unix and Linux file systems to store information about a file.
+
+An inode can contain metadata such as file permissions, ownership, file size, timestamps, and pointers to data blocks.
+
+FILE SHARING
+
+Operating systems can allow files to be shared among multiple users or processes while applying appropriate protection and access permissions.
+
+FILE SYSTEM CONSISTENCY
+
+File system consistency means that the stored file-system structures correctly represent the data and allocation state of the storage device.
+
+Operating systems may use techniques such as journaling to help recover from system crashes and maintain consistency.
+
+SUMMARY
+
+A file system provides an organized method for storing and accessing files on secondary storage. It manages file operations, directories, file allocation, free space, protection, and storage structures. Contiguous, linked, and indexed allocation are important file allocation techniques used in operating systems.

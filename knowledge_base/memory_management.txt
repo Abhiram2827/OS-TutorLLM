@@ -1,0 +1,124 @@
+OPERATING SYSTEMS - MEMORY MANAGEMENT
+
+Memory management is an important function of an operating system. It manages the main memory and controls how memory is allocated to and released from processes.
+
+MAIN MEMORY
+
+Main memory, or RAM, stores programs and data that are currently being used by the CPU. The operating system keeps track of which parts of memory are occupied and which parts are free.
+
+MEMORY ALLOCATION
+
+Memory allocation is the process of assigning memory space to processes. When a process needs memory, the operating system allocates an appropriate amount of memory. When the process finishes, the memory is released.
+
+CONTIGUOUS MEMORY ALLOCATION
+
+In contiguous memory allocation, each process is stored in a continuous section of memory.
+
+There are two common approaches:
+
+1. Fixed Partitioning
+2. Variable Partitioning
+
+Fixed partitioning divides memory into fixed-size partitions. A process is assigned to one partition.
+
+Variable partitioning creates partitions according to the size required by processes.
+
+FRAGMENTATION
+
+Fragmentation occurs when memory space is wasted.
+
+Internal fragmentation occurs when allocated memory contains unused space inside the allocated block.
+
+External fragmentation occurs when free memory is available but is divided into small non-contiguous blocks.
+
+PAGING
+
+Paging is a non-contiguous memory management technique.
+
+In paging, logical memory is divided into fixed-size blocks called pages. Physical memory is divided into fixed-size blocks called frames.
+
+A page can be loaded into any available frame.
+
+A page table is used to map logical page numbers to physical frame numbers.
+
+Advantages of paging include:
+- Eliminates external fragmentation
+- Allows non-contiguous memory allocation
+- Makes memory management easier
+
+PAGE FAULT
+
+A page fault occurs when a process tries to access a page that is not currently present in main memory.
+
+When a page fault occurs, the operating system loads the required page from secondary storage into an available frame.
+
+PAGE REPLACEMENT
+
+If there is no free frame available when a page fault occurs, the operating system must replace one of the pages currently in memory.
+
+Page replacement algorithms determine which page should be removed.
+
+Common page replacement algorithms are:
+
+1. FIFO
+2. LRU
+3. Optimal
+
+FIFO PAGE REPLACEMENT
+
+FIFO stands for First-In, First-Out.
+
+The FIFO algorithm replaces the page that entered memory first.
+
+FIFO is simple to implement, but it can sometimes suffer from Belady's anomaly.
+
+LRU PAGE REPLACEMENT
+
+LRU stands for Least Recently Used.
+
+The LRU algorithm replaces the page that has not been used for the longest period of time.
+
+LRU generally performs better than FIFO but requires information about recent page usage.
+
+OPTIMAL PAGE REPLACEMENT
+
+The Optimal page replacement algorithm replaces the page that will not be used for the longest period of time in the future.
+
+It provides the minimum possible number of page faults for a given reference string.
+
+However, the exact future memory references are not known in practical systems, so the Optimal algorithm is mainly used as a theoretical benchmark.
+
+VIRTUAL MEMORY
+
+Virtual memory is a memory management technique that allows a process to use more memory than the available physical RAM.
+
+It uses secondary storage as an extension of main memory.
+
+Virtual memory allows larger programs to execute even when sufficient physical memory is not available.
+
+DEMAND PAGING
+
+Demand paging loads a page into memory only when the page is required.
+
+If the required page is not in memory, a page fault occurs and the operating system loads the page from secondary storage.
+
+THRASHING
+
+Thrashing occurs when the system spends most of its time handling page faults instead of executing processes.
+
+It can occur when processes do not have enough frames to keep their required pages in memory.
+
+MEMORY MANAGEMENT GOALS
+
+The main goals of memory management are:
+
+1. Efficient utilization of memory
+2. Allocation and deallocation of memory
+3. Protection between processes
+4. Support for virtual memory
+5. Reduction of memory wastage
+6. Efficient execution of processes
+
+SUMMARY
+
+Memory management allows the operating system to efficiently control main memory. Techniques such as paging, virtual memory, demand paging, and page replacement help the operating system manage memory and execute multiple processes efficiently.

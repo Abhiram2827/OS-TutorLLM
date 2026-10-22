@@ -1,0 +1,231 @@
+               Operating Systems
+Computer Architecture Support to Operating System
+
+
+
+
+                                                    1
+What is an Operating System?
+• A program that acts as an intermediary between a user of a computer and the computer
+  hardware
+• Operating system goals:
+    • Execute user programs and make solving user problems easier
+    • Make the computer system convenient to use
+    • Use the computer hardware in an efficient manner
+  Computer System Structure
+• Computer system can be divided into four components:
+    • Hardware – provides basic computing resources
+        • CPU, memory, I/O devices
+    • Operating system
+        • Controls and coordinates use of hardware among various applications and users
+    • Application programs – define the ways in which the system resources are used to solve the
+      computing problems of the users
+        • Word processors, compilers, web browsers, database systems, video games
+    • Users
+        • People, machines, other computers
+Four Components of a Computer System
+What Operating Systems Do
+   • The operating system controls the hardware and coordinates its use among the various application
+     programs for the various users.
+   • We can also view a computer system as consisting of hardware, software, and data.
+   • The operating system provides the means for proper use of these resources in the operation of the
+     computer system.
+   • An operating system is similar to a government. Like a government, it performs no useful function
+     by itself. It simply provides an environment within which other programs can do useful work.
+   • To understand more fully the operating system's role, we explore operating systems from two
+     viewpoints:
+        • The user
+        • The system.
+User View
+    The user's view of the computer varies according to the interface being used
+
+
+         • Single user computers (e.g., PC, workstations). Such systems are designed for one user to
+           monopolize its resources. The goal is to maximize the work (or play) that the user is
+           performing. the operating system is designed mostly for ease of use and good
+           performance.
+         • Multi user computers (e.g., mainframes, computing servers). These users share resources
+           and may exchange information. The operating system in such cases is designed to
+           maximize resource utilization -- to assure that all available CPU time, memory, and I/O are
+           used efficiently and that no individual users takes more than their air share.
+User View (Cont.)
+    • Handheld computers (e.g., smartphones and tablets). The user interface for mobile
+      computers generally features a touch screen. The systems are resource poor, optimized for
+      usability and battery life.
+    • Embedded computers (e.g., computers in home devices and automobiles) The user interface
+      may have numeric keypads and may turn indicator lights on or off to show status. The
+      operating systems are designed primarily to run without user intervention.
+System View
+From the computer's point of view, the operating system is the program most intimately involved
+with the hardware. There are two different views:
+
+
+     • The operating system is a resource allocator
+         • Manages all resources
+         • Decides between conflicting requests for efficient and fair resource use
+     • The operating systems is a control program
+         • Controls execution of programs to prevent errors and improper use of the computer
+Defining Operating System
+No universally accepted definition of what an OS:
+   • Operating systems exist to offer a reasonable way to solve the problem of creating a
+     usable computing system.
+   • The fundamental goal of computer systems is to execute user programs and to make
+     solving user problems easier.
+   • Since bare hardware alone is not particularly easy to use, application programs are
+     developed.
+        • These programs require certain common operations, such as those controlling the
+          I/O devices.
+        • The common functions of controlling and allocating resources are brought together
+          into one piece of software: the operating system.
+Defining Operating System (Cont.)
+No universally accepted definition of what is part of the OS:
+
+    • A simple viewpoint is that it includes everything a vendor ships when you
+      order the operating system. The features that are included vary greatly
+      across systems:
+        • Some systems take up less than a megabyte of space and lack even a
+          full-screen editor,
+        • Some systems require gigabytes of space and are based entirely on
+          graphical windowing systems.
+Defining Operating System (Cont.)
+No universally accepted definition of what is part of the OS:
+
+     • A more common definition, and the one that we usually follow, is that the
+       operating system is the one program running at all times on the computer
+       -- usually called the kernel.
+     • Along with the kernel, there are two other types of programs:
+         • System programs, which are associated with the operating system but
+           are not necessarily part of the kernel.
+         • Application programs, which include all programs not associated with
+           the operation of the system.
+Defining Operating System (Cont.)
+• The emergence of mobile devices, have resulted in an increase in the number of features
+  that constituting the operating system.
+• Mobile operating systems often include not only a core kernel but also middleware -- a
+  set of software frameworks that provide additional services to application developers.
+• For example, each of the two most prominent mobile operating systems -- Apple's iOS and
+  Google's Android -- feature a core kernel along with middleware that supports databases,
+  multimedia, and graphics (to name only a few).
+Simple Batch System
+    Multi-programming System
+      Real time Operating System
+        Multi-processing System
+           Distributed Operating System
+
+                                          13
+         SIMPLE BATCH SYSTEM
+In Batch processing same type of jobs batch (BATCH- a set
+ of jobs with similar needs) together and execute at a time.
+
+The OS was always resident in memory.
+
+
+
+
+                                                       14
+ADVANTAGES
+ A data center’s staff can schedule batch processing during times when
+  the computers are otherwise idle, such as overnight.
+
+ The computer operators can delay or prioritize different batches easily,
+  depending on circumstances.
+DISADVANTAGES
+ Zero interaction between user and computer.
+ No mechanism to prioritize processes.
+ CPU is often idle, because the speeds of the mechanical I/O devices is
+  slower than CPU.
+Examples
+ Payroll run for company.
+ Gas and electricity bills produced by batch system.
+
+                                                                           15
+  MULTI-PROGRAMMING SYSTEM
+ In this the operating       system,     picks    and begins to execute one job
+  from memory.
+ Multiprogramming system, CPU will never be idle and keeps on processing.
+                      ADVANTAGES
+                      It increases CPU utilization.
+                      It maximizes the total job throughput of a          Example
+                      computer.                                     Consider that Three jobs are
+                      Better    Reliability-if  one    processor   submitted. Almost no contention
+                      breakdown then other takes its workload.      for resources . All three can run
+                                                                    in    minimum      time     in  a
+                                                                    multitasking          environment
+                      DISADVANTAGES                                 (assuming        JOB2/3 have
+                       It must keep track of all kinds of jobs.    enough CPU time to keep their
+                       Each system requires large chunks of        I/O operations active)
+                       hard drive space which cannot be
+                       allocated to programs.
+                       Poor CPU usage when only one
+                       program is present in memory.
+                                                                                           16
+      REAL-TIME OPERATING SYSTEM
+• Real time system is defined as a data processing system in which the time interval
+  required to process and respond to inputs is so small that it controls the
+  environment.                     Types:
+                                   1. Hard real-time systems
+                                       Hard     real-time   systems-
+                                       guarantee that critical tasks
+                                       complete on time. In hard
+                                       real-time systems secondary
+                                       storage is limited or missing
+                                       with data stored in ROM
+
+
+                                   2. Soft real-time systems
+                                       Soft real-time     operating
+                                       systems-that     can only
+                                       guarantee a maximum of the
+                                       time are referred to as soft
+                                       real-time.
+                                                                             17
+ADVANTAGES
+  RTOS give maximum consumption of the system and gives us more output.
+  Due to small size of programs RTOS can also be used in embedded systems like in
+   transport and others.
+  RTOS is error free that mean it has no chances of error in performing tasks.
+
+DISADVANTAGES
+ There are only limited tasks run at the same time and other task have to wait.
+
+ RTOS used lot of system resources which is                not as good and is also
+ expensive.
+
+ Multi tasking is done few of times and this is the main disadvantage of RTOS.
+
+                                                                                  18
+     MULTIPROCESSOR SYSTEM
+• A multiprocessor system consists of several processors that share a common
+  physical memory. Multiprocessor system provides higher computing power and
+  speed.                          ADVANTAGES                DISADVANTAGES
+                                Enhanced performance.        It's more complex than
+                                Execution of several tasks   other operating systems.
+                                by different processors       It requires context
+                                concurrently, increases the   switching which slightly
+                                system's throughput.          impacts performance.
+
+
+
+
+                                                                               19
+  DISTRIBUTED OPERATING SYSTEM
+• The motivation behind developing distributed operating systems is
+  the availability of powerful and inexpensive microprocessors and
+  advances in communication technology.
+                    ADVANDAGES
+                      If one machine crashes, the system as a whole can still survive.
+
+                      A distributed system may have more total computing power than a mainframe.
+
+                      Since it is an open system it is always ready to communicate with
+                      other systems.
+
+                    DISADVANDAGES
+                       Distributed systems will have an inherent security issue.
+
+                       If the network gets saturated then problems with transmission will surface.
+
+                       There is currently very little less software support for Distributed system.
+
+                                                                                                       20
+

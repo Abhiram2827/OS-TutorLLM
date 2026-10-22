@@ -1,0 +1,154 @@
+CPU SCHEDULING
+
+CPU scheduling is the process of selecting a process from the ready queue and allocating the CPU to it.
+
+The main goals of CPU scheduling are:
+1. Maximize CPU utilization.
+2. Maximize throughput.
+3. Minimize waiting time.
+4. Minimize turnaround time.
+5. Minimize response time.
+
+IMPORTANT TERMS
+
+Arrival Time (AT):
+The time at which a process enters the ready queue.
+
+Burst Time (BT):
+The amount of CPU time required by a process.
+
+Completion Time (CT):
+The time at which a process finishes execution.
+
+Turnaround Time (TAT):
+TAT = CT - AT
+
+Waiting Time (WT):
+WT = TAT - BT
+
+Response Time (RT):
+RT = First CPU Start Time - AT
+
+
+FIRST COME FIRST SERVED (FCFS)
+
+FCFS is a non-preemptive CPU scheduling algorithm.
+
+The process that arrives first is executed first.
+
+Advantages:
+- Simple to implement.
+- Easy to understand.
+- Fair according to arrival order.
+
+Disadvantages:
+- Can produce high average waiting time.
+- Convoy effect can occur.
+
+
+SHORTEST JOB FIRST (SJF)
+
+SJF selects the process with the smallest burst time.
+
+In non-preemptive SJF, once a process starts executing, it runs until completion.
+
+Advantages:
+- Provides minimum average waiting time when burst times are known.
+- Simple concept.
+
+Disadvantages:
+- Long processes may suffer from starvation.
+- Burst time must be estimated.
+
+
+SHORTEST REMAINING TIME FIRST (SRTF)
+
+SRTF is the preemptive version of SJF.
+
+The process with the smallest remaining CPU burst time is selected.
+
+If a new process arrives with a smaller remaining burst time than the currently running process, the current process can be preempted.
+
+Advantages:
+- Usually provides low average waiting time.
+- Responds to shorter processes quickly.
+
+Disadvantage:
+- More context switching can occur.
+
+
+PRIORITY SCHEDULING
+
+In priority scheduling, every process is assigned a priority.
+
+The process with the highest priority is selected first.
+
+Priority scheduling can be:
+1. Preemptive.
+2. Non-preemptive.
+
+If smaller priority numbers represent higher priority, priority 1 is higher than priority 2.
+
+Starvation can occur when low-priority processes wait for a long time.
+
+Aging can be used to gradually increase the priority of waiting processes.
+
+
+ROUND ROBIN (RR)
+
+Round Robin is a preemptive scheduling algorithm.
+
+Each process receives a fixed amount of CPU time called a time quantum.
+
+After the time quantum expires, the running process is moved to the end of the ready queue if it has not completed.
+
+Advantages:
+- Fair to processes.
+- Suitable for time-sharing systems.
+- Provides good response time.
+
+Disadvantages:
+- Very small time quantum causes many context switches.
+- Very large time quantum makes it behave similar to FCFS.
+
+
+CONTEXT SWITCH
+
+A context switch occurs when the CPU changes from one process to another.
+
+The operating system saves the state of the currently running process and loads the state of another process.
+
+Context switching introduces overhead because the CPU spends time switching instead of executing user processes.
+
+
+CPU SCHEDULING FORMULAS
+
+Turnaround Time:
+TAT = CT - AT
+
+Waiting Time:
+WT = TAT - BT
+
+Response Time:
+RT = First CPU Start Time - AT
+
+Average Waiting Time:
+Average WT = Sum of Waiting Times / Number of Processes
+
+Average Turnaround Time:
+Average TAT = Sum of Turnaround Times / Number of Processes
+
+
+EXAMPLE
+
+Consider three processes:
+
+P1: AT = 0, BT = 5
+P2: AT = 1, BT = 3
+P3: AT = 2, BT = 2
+
+A scheduling algorithm determines the order in which P1, P2 and P3 receive CPU time.
+
+A Gantt chart can be used to represent the execution order.
+
+The Completion Time, Turnaround Time and Waiting Time can then be calculated using the formulas above.

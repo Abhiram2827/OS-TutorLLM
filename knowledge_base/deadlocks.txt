@@ -1,0 +1,125 @@
+OPERATING SYSTEMS - DEADLOCKS
+
+A deadlock is a situation in which a group of processes are permanently waiting for resources held by other processes in the same group.
+
+For example, process P1 may hold resource R1 and wait for resource R2, while process P2 holds R2 and waits for R1. Neither process can continue, resulting in deadlock.
+
+FOUR NECESSARY CONDITIONS FOR DEADLOCK
+
+Deadlock can occur only when all four of the following conditions hold simultaneously.
+
+1. MUTUAL EXCLUSION
+
+At least one resource must be held in a non-shareable mode. Only one process can use the resource at a time.
+
+2. HOLD AND WAIT
+
+A process holding at least one resource is waiting to acquire additional resources held by other processes.
+
+3. NO PREEMPTION
+
+A resource cannot be forcibly taken from a process. It must be released by the process after it has completed its task.
+
+4. CIRCULAR WAIT
+
+A circular chain of processes exists in which each process is waiting for a resource held by the next process.
+
+DEADLOCK PREVENTION
+
+Deadlock prevention attempts to ensure that at least one of the four necessary conditions cannot occur.
+
+Examples include preventing hold and wait or allowing resource preemption under suitable conditions.
+
+DEADLOCK AVOIDANCE
+
+Deadlock avoidance examines resource allocation before granting requests.
+
+The operating system requires information about the maximum resource requirements of processes.
+
+The system grants a resource request only when the resulting state remains safe.
+
+SAFE STATE
+
+A system is in a safe state if there exists a sequence of processes such that each process can obtain its remaining required resources and complete successfully.
+
+This sequence is called a safe sequence.
+
+UNSAFE STATE
+
+An unsafe state does not necessarily mean that deadlock has already occurred. It means that the system can potentially enter a deadlock state depending on future resource requests.
+
+BANKER'S ALGORITHM
+
+Banker's Algorithm is a deadlock avoidance algorithm.
+
+It checks whether granting a resource request leaves the system in a safe state.
+
+The main data structures used by Banker's Algorithm are:
+
+1. Available
+2. Maximum
+3. Allocation
+4. Need
+
+NEED MATRIX
+
+The Need matrix represents the remaining resources that each process may require.
+
+The formula is:
+
+Need = Maximum - Allocation
+
+SAFE SEQUENCE
+
+To find a safe sequence, the algorithm checks whether a process's remaining Need can be satisfied using the currently Available resources.
+
+If a process can finish, its allocated resources are released and added back to Available.
+
+The process is then added to the safe sequence.
+
+This process continues until all processes have been completed.
+
+RESOURCE ALLOCATION GRAPH
+
+A Resource Allocation Graph, or RAG, represents processes and resources using nodes and directed edges.
+
+A process can be represented by a circle and a resource by a rectangle.
+
+A request edge represents a process requesting a resource.
+
+An assignment edge represents a resource assigned to a process.
+
+DEADLOCK DETECTION
+
+Deadlock detection algorithms determine whether a deadlock exists after resources have been allocated.
+
+If the system detects deadlock, recovery methods can be used.
+
+DEADLOCK RECOVERY
+
+Possible recovery techniques include:
+
+1. Process termination
+2. Resource preemption
+
+PROCESS TERMINATION
+
+One or more processes can be terminated to break the deadlock.
+
+RESOURCE PREEMPTION
+
+A resource can be taken from one process and allocated to another process when appropriate.
+
+STARVATION
+
+Starvation occurs when a process waits for a resource for an indefinitely long period because other processes continue to receive the resource.
+
+DEADLOCK VS STARVATION
+
+Deadlock means processes are waiting for each other and none of them can proceed.
+
+Starvation means a process continues to wait because resource allocation repeatedly favors other processes.
+
+IMPORTANT POINT
+
+Deadlock requires all four conditions: mutual exclusion, hold and wait, no preemption, and circular wait.

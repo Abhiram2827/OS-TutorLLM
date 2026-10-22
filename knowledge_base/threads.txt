@@ -1,0 +1,133 @@
+OPERATING SYSTEMS - THREADS
+
+A thread is the smallest unit of CPU execution within a process. A process can contain one or more threads.
+
+PROCESS AND THREAD
+
+A process is a program in execution, while a thread is an execution unit within a process.
+
+Threads belonging to the same process share:
+- Code section
+- Data section
+- Heap
+- Open files
+- Other process resources
+
+Each thread has its own:
+- Thread ID
+- Program counter
+- Register set
+- Stack
+
+SINGLE-THREADED PROCESS
+
+A single-threaded process contains only one thread of execution.
+
+MULTITHREADED PROCESS
+
+A multithreaded process contains multiple threads that can execute concurrently.
+
+For example, a web browser may use different threads for displaying a webpage, handling user input, downloading data, and performing background tasks.
+
+BENEFITS OF MULTITHREADING
+
+The major advantages of multithreading are:
+
+1. Responsiveness
+A program can remain responsive while another thread performs a time-consuming operation.
+
+2. Resource Sharing
+Threads of the same process share the resources of the process.
+
+3. Economy
+Creating and managing threads generally requires fewer resources than creating separate processes.
+
+4. Scalability
+Multiple threads can execute on multiple CPU cores, improving parallel execution.
+
+THREAD STATES
+
+A thread can move through different states such as:
+- New
+- Ready
+- Running
+- Waiting or Blocked
+- Terminated
+
+THREAD CONTROL BLOCK
+
+The operating system maintains information about a thread. This information can include the thread ID, register values, program counter, stack information, and scheduling information.
+
+USER-LEVEL THREADS
+
+User-level threads are managed by a thread library in user space.
+
+Advantages:
+- Faster thread management
+- No direct kernel involvement for many operations
+- Simple implementation
+
+Disadvantages:
+- A blocking system call can block the entire process in some user-level thread models.
+- The kernel may not schedule individual user-level threads independently.
+
+KERNEL-LEVEL THREADS
+
+Kernel-level threads are managed directly by the operating system kernel.
+
+Advantages:
+- The kernel can schedule individual threads.
+- A blocked thread does not necessarily block other threads of the same process.
+- Multiple threads can execute on multiple processors.
+
+Disadvantage:
+- Thread management may involve greater overhead because kernel support is required.
+
+THREAD MODELS
+
+Common thread mapping models include:
+
+1. Many-to-One
+Many user threads are mapped to a single kernel thread.
+
+2. One-to-One
+Each user thread is mapped to one kernel thread.
+
+3. Many-to-Many
+Multiple user threads are mapped to a number of kernel threads.
+
+CONCURRENCY AND PARALLELISM
+
+Concurrency means multiple tasks make progress during overlapping periods.
+
+Parallelism means multiple tasks execute at the same time on different CPU cores.
+
+Thread synchronization is important when multiple threads access shared data.
+
+RACE CONDITION
+
+A race condition occurs when multiple threads access shared data concurrently and the final result depends on the order of execution.
+
+Synchronization mechanisms such as mutexes and semaphores can be used to control access to shared resources.
+
+CONTEXT SWITCHING
+
+A context switch occurs when the CPU changes from executing one thread or process to another. The operating system saves the current execution state and restores the state of the next thread or process.
+
+THREAD TERMINATION
+
+A thread terminates when it completes its execution or is explicitly terminated.
+
+JOINING THREADS
+
+Joining allows one thread to wait until another thread finishes execution.
+
+For example, in C++, the join() operation can be used to wait for a thread to complete.
+
+THREADS IN OPERATING SYSTEMS
+
+Threads improve the ability of operating systems and applications to perform multiple tasks efficiently. They are widely used in servers, browsers, multimedia applications, and other concurrent programs.
+
+SUMMARY
+
+A thread is the basic unit of CPU execution within a process. Multithreading improves responsiveness, resource sharing, economy, and scalability. Threads can be managed at the user level or kernel level, and synchronization is required when multiple threads access shared resources.

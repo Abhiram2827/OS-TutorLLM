@@ -1,0 +1,129 @@
+OPERATING SYSTEMS - PROCESS SYNCHRONIZATION
+
+Process synchronization is a mechanism used by an operating system to coordinate multiple processes or threads that execute concurrently and access shared resources.
+
+WHY SYNCHRONIZATION IS NEEDED
+
+When multiple processes or threads access shared data at the same time, incorrect results may occur. Synchronization ensures that shared resources are accessed in a controlled manner.
+
+RACE CONDITION
+
+A race condition occurs when the final result of a program depends on the order in which multiple processes or threads access shared data.
+
+For example, if two processes simultaneously update the same bank account balance, the final balance may become incorrect if their operations are not synchronized.
+
+CRITICAL SECTION
+
+A critical section is the part of a program where a process accesses shared data or a shared resource.
+
+Only one process should execute its critical section at a time when mutual exclusion is required.
+
+CRITICAL SECTION PROBLEM
+
+A solution to the critical-section problem should satisfy three main requirements:
+
+1. Mutual Exclusion
+Only one process can execute its critical section at a time.
+
+2. Progress
+If no process is currently executing its critical section, the selection of the next process that wants to enter should not be postponed indefinitely.
+
+3. Bounded Waiting
+There must be a limit on how many times other processes can enter their critical sections before a waiting process is allowed to enter.
+
+MUTEX
+
+A mutex, or mutual exclusion lock, is a synchronization mechanism used to protect shared resources.
+
+A thread must acquire the mutex before entering a protected critical section and release it after completing the operation.
+
+SEMAPHORE
+
+A semaphore is a synchronization variable used to control access to shared resources.
+
+The two basic operations on a semaphore are:
+
+1. wait()
+The wait operation decreases the semaphore value and may block the process if the resource is unavailable.
+
+2. signal()
+The signal operation increases the semaphore value and may wake a waiting process.
+
+BINARY SEMAPHORE
+
+A binary semaphore can have values such as 0 and 1. It can be used to provide mutual exclusion.
+
+COUNTING SEMAPHORE
+
+A counting semaphore can have a range of non-negative values. It can be used to control access to multiple instances of a resource.
+
+MONITOR
+
+A monitor is a high-level synchronization mechanism that allows shared data and procedures that operate on the data to be combined into a single programming construct.
+
+Only one process or thread can be active inside a monitor at a time.
+
+PRODUCER-CONSUMER PROBLEM
+
+The producer-consumer problem involves a producer that generates data and a consumer that uses the data.
+
+A shared buffer is used between them.
+
+Synchronization is required to ensure that:
+- The producer does not add data when the buffer is full.
+- The consumer does not remove data when the buffer is empty.
+- Multiple processes do not access the buffer incorrectly at the same time.
+
+READERS-WRITERS PROBLEM
+
+The readers-writers problem involves processes that access shared data.
+
+Multiple readers can often read shared data at the same time, but a writer generally requires exclusive access.
+
+Synchronization mechanisms are needed to coordinate readers and writers.
+
+DINING PHILOSOPHERS PROBLEM
+
+The dining philosophers problem is a classical synchronization problem.
+
+Several philosophers share a limited number of resources. Each philosopher needs multiple resources to perform an operation.
+
+Improper resource allocation can lead to deadlock or starvation.
+
+SYNCHRONIZATION AND DEADLOCK
+
+Synchronization mechanisms must be designed carefully because incorrect use of locks or semaphores can cause deadlock.
+
+For example, if two processes each hold one resource and wait indefinitely for another resource held by the other process, a deadlock can occur.
+
+STARVATION
+
+Starvation occurs when a process waits for a resource or CPU for an indefinitely long period because other processes continue to receive the required resource.
+
+Synchronization and scheduling mechanisms should provide fair access to resources.
+
+ATOMIC OPERATION
+
+An atomic operation is performed as one indivisible operation. Other processes or threads cannot observe the operation in an intermediate state.
+
+Atomic operations are useful for implementing synchronization mechanisms.
+
+CONTEXT SWITCHING
+
+During concurrent execution, the operating system may perform context switches between processes or threads.
+
+Synchronization must maintain correct shared-data access even when execution is interrupted and resumed.
+
+IMPORTANCE OF PROCESS SYNCHRONIZATION
+
+Process synchronization helps:
+- Prevent race conditions
+- Protect shared resources
+- Maintain data consistency
+- Coordinate concurrent processes
+- Provide mutual exclusion
+- Prevent incorrect execution results
+
+SUMMARY
+
+Process synchronization is an important operating system concept used to coordinate concurrent processes and threads. Critical sections, mutexes, semaphores, monitors, and atomic operations help protect shared resources and maintain correct program execution.
